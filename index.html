@@ -15,7 +15,7 @@
   --font:'Noto Sans KR','Noto Sans',sans-serif;
 }
 *{box-sizing:border-box;border-radius:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
 body{margin:0;background:var(--bg);color:var(--body);font-family:var(--font);font-size:15px;line-height:1.7;letter-spacing:-.02em;word-break:keep-all;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,h5,h6,table,button,input,select,textarea,svg text{font-family:var(--font)}
 table{font-variant-numeric:tabular-nums}
@@ -31,13 +31,13 @@ a{color:var(--accent2)}
 .btn:hover{background:var(--surface)}
 
 /* mobile jump */
-.jump{display:none;position:sticky;top:56px;z-index:15;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:0 16px}
+.jump{display:none;position:sticky;top:104px;z-index:15;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:0 16px}
 .jump a{display:inline-block;padding:10px 0;margin-right:18px;font-size:13px;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent}
 .jump a.active{color:var(--ink);border-bottom-color:var(--accent)}
 
 /* layout */
 .wrap{display:grid;grid-template-columns:220px minmax(0,1fr);max-width:1180px;margin:0 auto}
-.toc{position:sticky;top:56px;align-self:start;height:calc(100vh - 56px);border-right:1px solid var(--line);padding:40px 0 40px 0}
+.toc{position:sticky;top:104px;align-self:start;height:calc(100vh - 104px);overflow-y:auto;border-right:1px solid var(--line);padding:40px 0 40px 0}
 .toc p{margin:0 24px 14px;font-size:11px;letter-spacing:.12em;color:var(--muted);font-family:var(--font)}
 .toc a{display:block;padding:7px 22px;font-size:13.5px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;line-height:1.45}
 .toc a:hover{color:var(--ink)}
@@ -64,6 +64,18 @@ p{margin:0 0 14px}
 .note{font-size:12.5px;color:var(--muted);margin-top:10px}
 
 .quote{background:var(--surface);border-left:3px solid var(--accent);padding:22px 26px;margin:26px 0;font-family:var(--font);font-size:18px;line-height:1.65;color:var(--ink);font-weight:500}
+
+/* report switch tabs */
+.viewtabs{position:sticky;top:56px;z-index:18;background:#fff;border-bottom:1px solid var(--ink);height:48px}
+.viewtabs .in{max-width:1180px;margin:0 auto;height:100%;display:flex;gap:4px;padding:0 24px}
+.viewtabs button{font:inherit;font-size:14.5px;letter-spacing:-.02em;background:none;border:0;border-bottom:3px solid transparent;padding:0 14px;margin-bottom:-1px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.viewtabs button:hover{color:var(--ink)}
+.viewtabs button[aria-selected="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--accent)}
+.view[hidden]{display:none}
+b.tag{color:var(--accent);font-weight:700;margin-right:6px}
+table.cmp td:first-child,table.steps td:first-child{white-space:nowrap;color:var(--ink);font-weight:500}
+table.cmp th:last-child,table.cmp td:last-child{background:#FDF3F4}
+table.sched td{line-height:1.9}
 
 /* report bullets */
 ul.pts{list-style:none;padding:0;margin:0 0 14px}
@@ -97,8 +109,8 @@ table.ab th .yr{font-weight:400;color:var(--muted);margin-left:6px;font-size:12.
 
 /* KPI strip */
 .kpi{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:28px 0}
-.kpi div{padding:18px 18px 16px;border-left:1px solid var(--line)}
-.kpi div:first-child{border-left:0;padding-left:0}
+.kpi>div{padding:18px 18px 16px;border-left:1px solid var(--line)}
+.kpi>div:first-child{border-left:0;padding-left:0}
 .kpi .v{font-family:var(--font);font-variant-numeric:tabular-nums;font-size:30px;font-weight:700;color:var(--ink);line-height:1.1}
 .kpi .v small{font-size:14px;font-weight:500;color:var(--muted);margin-left:2px}
 .kpi .l{font-size:12.5px;color:var(--muted);margin-top:6px}
@@ -151,8 +163,8 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
   h1{font-size:28px}
   h2{font-size:22px}
   .kpi{grid-template-columns:1fr 1fr}
-  .kpi div:nth-child(3){border-left:0;padding-left:0}
-  .kpi div:nth-child(n+3){border-top:1px solid var(--line)}
+  .kpi>div:nth-child(3){border-left:0;padding-left:0}
+  .kpi>div:nth-child(n+3){border-top:1px solid var(--line)}
   .charts2{grid-template-columns:minmax(0,1fr)}
   .axes{grid-template-columns:1fr}
   .axes div{border-left:0;padding-left:0;border-top:1px solid var(--line)}
@@ -163,11 +175,14 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
   .metagrid div:nth-child(-n+3){border-bottom:1px solid var(--line)}
   .topbar{padding:0 16px}
   .topbar .meta span{display:none}
-  html{scroll-padding-top:104px}
+  .viewtabs .in{padding:0 8px}
+  .viewtabs button{padding:0 10px;font-size:14px}
+  html{scroll-padding-top:150px}
 }
 @media print{
   @page{size:A4;margin:16mm 14mm}
-  .topbar,.toc,.jump,.tabs,.btn{display:none !important}
+  .topbar,.toc,.jump,.tabs,.btn,.viewtabs{display:none !important}
+  table.cmp th:last-child,table.cmp td:last-child{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .wrap{display:block}
   main{padding:0}
   .panel[hidden]{display:block !important}
@@ -192,6 +207,12 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
   <div class="meta"><span>국제처 국제협력지원팀 · 2026. 11.</span><button class="btn" onclick="window.print()">PDF 인쇄</button></div>
 </header>
 
+<nav class="viewtabs" aria-label="보고서 선택"><div class="in" role="tablist">
+  <button role="tab" data-view="gz" aria-selected="true">글로벌 존</button>
+  <button role="tab" data-view="pr" aria-selected="false">외국인 유학생 홍보대사</button>
+</div></nav>
+
+<div class="view" id="view-gz">
 <nav class="jump" aria-label="섹션 이동">
   <a href="#s1">요약</a><a href="#s2">현황</a><a href="#s3">타 대학 사례</a><a href="#s4">운영방안</a><a href="#s5">2027 계획</a><a href="#s6">참고자료</a>
 </nav>
@@ -410,47 +431,432 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
   </div></main>
 </div>
 
+</div>
+
+<div class="view" id="view-pr" hidden>
+<nav class="jump" aria-label="섹션 이동">
+  <a href="#pr-s1">요지</a><a href="#pr-s2">시장·경쟁</a><a href="#pr-s3">본교 진단</a><a href="#pr-s4">1단계 계획</a><a href="#pr-s5">일정·지표</a><a href="#pr-s6">논의 사항</a><a href="#pr-s7">붙임</a><a href="#pr-s8">참고자료</a>
+</nav>
+
+<div class="wrap">
+  <aside class="toc" aria-label="목차">
+    <p>CONTENTS</p>
+    <a href="#pr-s1">01 보고 요지</a>
+    <a href="#pr-s2">02 시장 및 경쟁 현황</a>
+    <a href="#pr-s3">03 본교 진단</a>
+    <a href="#pr-s4">04 1단계 캠페인 계획(안)</a>
+    <a href="#pr-s5">05 추진 일정·성과 지표</a>
+    <a href="#pr-s6">06 논의 사항</a>
+    <a href="#pr-s7">07 붙임</a>
+    <a href="#pr-s8">08 참고자료</a>
+  </aside>
+
+  <main><div class="col">
+    <p class="overline">계명문화대학교 국제처 · 국제협력지원팀</p>
+    <h1>외국인 유학생 홍보 현황 분석 및 국제처 추진 계획(안)</h1>
+    <p class="lede">주요 송출국 광고 시장, 대구권 경쟁 대학, 국내 대학 홍보 사례, 본교 홍보 자산과 채널을 점검하고 외국인 유학생 홍보대사(K-Dream 서포터즈) 중심의 1단계 캠페인 계획을 정리함.</p>
+    <dl class="metagrid">
+      <div><dt>작성 부서</dt><dd>국제처 국제협력지원팀</dd></div>
+      <div><dt>작성 일자</dt><dd class="num">2026. 11.</dd></div>
+      <div><dt>용도</dt><dd>외국인 홍보 방향 및 1단계 캠페인 계획 보고, 추진 사항 결정</dd></div>
+      <div><dt>근거</dt><dd>Meta 광고 라이브러리·유튜브·인스타그램·유학 플랫폼 직접 조회(2026. 11.), 정부 공고·통계, 언론 보도</dd></div>
+    </dl>
+
+    <section id="pr-s1">
+      <p class="kicker">SECTION 01</p>
+      <h2>보고 요지</h2>
+      <h3 style="margin-top:0">결론</h3>
+      <ul class="pts">
+        <li>주요 송출국의 '한국 유학' 광고는 현지 유학원이 장악. 본교는 광고 경쟁 대신 유학원이 만들 수 없는 재학생 콘텐츠와 대학 공식 정보로 차별화 필요</li>
+        <li>대구권 경쟁 전문대도 외국인 대상 SNS 규모가 작아(영진전문대 142명, 본교 376명) 지금 정비하면 지역 내 선점 가능. 다만 영진전문대가 영어 계정을 열고 우즈베키스탄·몽골·네팔로 국적을 넓히고 있어 시간 여유 없음 <a href="#pr-r4">[4]</a><a href="#pr-r16">[16]</a></li>
+        <li>본교는 유치 자산이 있으나 채널 분산, 한국어 위주 화면, 랜딩페이지 부재, 개인 계정 운영으로 해외 학생에게 전달되지 않음</li>
+        <li>1단계(2026. 12.~2027. 3.)는 비용 없이 끝낼 수 있는 기반 정비에 집중하고, 유료 부스트와 외부 플랫폼 제휴는 성과 확인 후 2단계로 추진</li>
+      </ul>
+
+      <h3>본교 포지셔닝(안)</h3>
+      <div class="quote">한국에서 졸업 후 취업까지 생각하는 학생에게, 계명문화대는 한국어교육센터 → 전문학사 → 뿌리산업 취업 경로가 한 캠퍼스에서 이어지는 대구의 전문대학입니다.</div>
+      <p class="note">근거: 대구 전문대 중 가장 이른 2014년부터 뿌리산업 외국인 인력 양성 <a href="#pr-r7">[7]</a>. 서포터즈 월별 주제, 랜딩페이지 첫 화면, 계정 프로필 소개를 모두 이 메시지에 맞춰 작성.</p>
+
+      <h3>결정 요청 사항</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>요청 사항</th><th>내용</th><th>선행 협의</th></tr></thead>
+        <tbody>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">① 계정 기관 명의 전환</td><td>공식 SNS를 부서 공용 메일과 학교 명의 비즈니스 계정으로 전환하고, 정규직 공동 관리자 지정</td><td>각 개인 계정 주</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">② 허브 계정 일원화</td><td>외국인 대상 채널을 @kmcu_korean 1개로 모으고, 자체 제작 영상과 랜딩페이지를 공식 계정에 공동 게시</td><td>유학생지원팀</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">③ 영문 랜딩페이지</td><td>과정·비용·장학·비자 서류·문의를 한 화면에 담은 단일 페이지를 본교 홈페이지 안에 개설(시안 제작 완료, <a href="#pr-landing">4-바</a> 참조)</td><td>홈페이지 페이지 신설 절차</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="pr-s2">
+      <p class="kicker">SECTION 02</p>
+      <h2>시장 및 경쟁 현황</h2>
+      <div class="kpi">
+        <div><div class="v">307,464<small>명</small></div><div class="l">국내 외국인 유학생 <a href="#pr-r1">[1]</a></div></div>
+        <div><div class="v">31.5<small>%</small></div><div class="l">베트남 출신 비중 <a href="#pr-r1">[1]</a></div></div>
+        <div><div class="v">117.5<small>%</small></div><div class="l">전문대 유학생 증가율(2023~2025) <a href="#pr-r2">[2]</a></div></div>
+        <div><div class="v accent">376<small>명</small></div><div class="l">본교 허브 계정 @kmcu_korean</div></div>
+      </div>
+
+      <h3>송출국과 광고 시장</h3>
+      <ul class="pts">
+        <li>국내 유학생 307,464명 중 베트남이 31.5%. 전문대학 유학생은 2023~2025년 117.5% 증가했으며 우즈베키스탄·몽골·네팔·미얀마 출신이 늘어남 <a href="#pr-r1">[1]</a><a href="#pr-r2">[2]</a></li>
+        <li>베트남·우즈베키스탄은 유학원 광고가 과열되어 대학 직접 광고가 상위권에 없음. 몽골은 유학생 규모에 비해 광고 경쟁이 적음 <a href="#pr-r3">[3]</a></li>
+      </ul>
+      <div class="charts2">
+        <div class="chart">
+          <h4>'한국 유학' 현지어 광고 수</h4>
+          <p class="cap">단위: 건 · Meta 광고 라이브러리 게재 중 광고</p>
+          <div class="box"><canvas id="cAds" aria-label="국가별 한국 유학 광고 수"></canvas></div>
+        </div>
+        <div class="chart">
+          <h4>외국인 대상 인스타그램 팔로워</h4>
+          <p class="cap">단위: 명 · 2026. 11. 직접 조회</p>
+          <div class="box"><canvas id="cFollow" aria-label="대학별 외국인 대상 인스타그램 팔로워 수"></canvas></div>
+        </div>
+      </div>
+      <p class="note">광고 수는 Meta 광고 라이브러리에서 현지어 '한국 유학' 키워드로 조회한 게재 중 광고 기준 <a href="#pr-r3">[3]</a>. 팔로워 수는 각 계정 직접 조회(2026. 11.) <a href="#pr-r4">[4]</a>. 유튜브는 우송대 글로벌 채널 12,800명, 본교 국제처 채널 103명, 영진전문대 국제교류 채널 38명.</p>
+
+      <h3>대구권 경쟁 대학 비교</h3>
+      <div class="tbl"><table class="cmp">
+        <thead><tr><th>구분</th><th>영진전문대</th><th>영남이공대</th><th>계명대(같은 재단)</th><th>본교</th></tr></thead>
+        <tbody>
+          <tr><td>핵심 메시지</td><td>해외취업 1위, 인증 9년 연속</td><td>입국부터 정주까지 원스톱 지원</td><td>비수도권 최고 등급 인증</td><td>뿌리산업 10년 운영(메시지 미정리)</td></tr>
+          <tr><td>규모·인증</td><td>2026학년도 유학생 1,000명 돌파 전망, 학위·어학과정 인증 <a href="#pr-r16">[16]</a></td><td>2025년 학위·어학과정 동시 인증 <a href="#pr-r18">[18]</a></td><td>3년 연속 우수인증, 비수도권 우수인증 대학 중 유학생 최다 <a href="#pr-r19">[19]</a></td><td>2026. 2. 학위과정 인증 신규 획득</td></tr>
+          <tr><td>취업·비자</td><td>법무부 육성형 전문기술학과 대구 전문대 유일 선정 <a href="#pr-r17">[17]</a></td><td>2026. 2. 뿌리산업 양성대학 선정, 원어민 직원 배치 <a href="#pr-r9">[9]</a></td><td>-</td><td>2014년부터 뿌리산업 양성대학 <a href="#pr-r7">[7]</a></td></tr>
+          <tr><td>외국인 SNS</td><td>영어 계정 142명(영어 릴스, TikTok 연동)</td><td>외국인 전용 계정 확인 안 됨</td><td>유튜브 채널 소규모 분산</td><td>@kmcu_korean 376명</td></tr>
+        </tbody>
+      </table></div>
+      <ul class="pts">
+        <li><b class="tag">기회</b> 지역 경쟁 대학도 디지털 채널이 작아, 먼저 정비하는 대학이 '대구 전문대 유학' 검색과 노출을 선점할 수 있음</li>
+        <li><b class="tag">위협</b> 영남이공대의 뿌리산업 선정으로 '뿌리산업 = 본교' 공식이 약해졌고, 영진전문대가 육성형 전문기술학과를 먼저 확보함. 졸업생 수, 기량검증 통과자, E-7-4 전환자 등 실적 숫자로 차별화 필요</li>
+      </ul>
+
+      <h3>운영 방식 벤치마크(전국)</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>대학</th><th>운영 방식</th><th>본교 적용</th></tr></thead>
+        <tbody>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">우송대</td><td>영어 계정 1개에 집중. 재학생 계정 테이크오버, 모집 안내 하이라이트 고정</td><td>허브 계정 일원화, 하이라이트 재구성</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">단국대</td><td>대본 없는 재학생 숏폼(국적 인터뷰, 한 달 생활비 등)을 올리고 반응 좋은 영상만 소액 부스트</td><td>서포터즈 숏폼 공동 게시, 부스트는 2단계</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">경동대·숙명여대</td><td>모집 전용 사이트 운영(경동대) <a href="#pr-r13">[13]</a>, 경쟁이 적은 몽골에 현지어 직접 광고(숙명여대)</td><td>랜딩페이지 신설, 몽골 우선 검토</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>유학생의 정보 탐색 경로</h3>
+      <p>IDP 조사에서 유학 준비생은 학생 생활 정보를 SNS(53%)·재학생 홍보대사(41%)에서, 입학 절차 정보를 유학원(63%)·대학 홈페이지(61%)에서 얻는다고 응답 <a href="#pr-r5">[5]</a>.</p>
+      <div class="implic"><span>IMPLICATION</span>SNS와 홍보대사는 생활·경험, 랜딩페이지는 입학 절차를 맡도록 역할 분담.</div>
+    </section>
+
+    <section id="pr-s3">
+      <p class="kicker">SECTION 03</p>
+      <h2>본교 진단</h2>
+      <h3 style="margin-top:0">유치 자산과 홍보 시 유의점</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>자산</th><th>내용</th><th>홍보 시 유의점</th></tr></thead>
+        <tbody>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">뿌리산업 양성대학</td><td>2014년 최초 선정, 2021년 평가 A등급 <a href="#pr-r7">[7]</a>. 기량검증 통과 시 E-7-4 전환 신청 가능 <a href="#pr-r8">[8]</a></td><td>기량검증은 전환 조건의 일부이며 한국어 요건과 뿌리기업 취업이 전제 <a href="#pr-r8">[8]</a>. 영남이공대도 2026. 2. 선정 <a href="#pr-r9">[9]</a>되어 실적 숫자로 차별화</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">장학 제도</td><td>TOPIK 급수 연계 수업료 감면, 한국어교육센터 수료 후 진학 시 감면</td><td>2학기 이후 TOPIK 4급 미취득 시 감면율이 낮아지므로 유지 조건을 함께 안내. 수치는 모집요강과 일치 확인</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">지역 정주 비자(F-2-R)</td><td>전문학사 이상, TOPIK 3급 이상(2026. 8. 완화) <a href="#pr-r11">[11]</a></td><td>대구는 서구·남구 등 인구감소지역 거주·취업이 요건 <a href="#pr-r10">[10]</a>. 일반 혜택처럼 표기하지 않음</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>전달 단계별 병목</h3>
+      <div class="tbl"><table class="steps">
+        <thead><tr><th>구분</th><th>① 노출</th><th>② 탐색</th><th>③ 방문</th><th>④ 문의·지원</th></tr></thead>
+        <tbody>
+          <tr><td>현황</td><td>외국인 콘텐츠가 3개 채널에 분산, 유튜브 9개월째 중단</td><td>프로필·영상 제목이 한국어로 현지어 검색에 노출되지 않음</td><td>홈페이지가 한국어 메뉴와 PDF 모집요강 위주, 우즈베크어·몽골어 없음 <a href="#pr-r14">[14]</a></td><td>문의 경로가 흩어져 있고 유입 경로 추적 불가</td></tr>
+          <tr class="hl"><td>개선</td><td>허브 계정 1개 통합</td><td>영문 프로필 변경</td><td>영문 랜딩페이지</td><td>메신저 문의 버튼, 추적 링크(UTM) 활용</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>운영 기반</h3>
+      <ul class="pts">
+        <li>공식 계정이 담당 교직원 개인 계정으로 개설·운영되어, 담당자 변경 시 계정과 팔로워를 잃을 수 있고 광고비를 기관 회계로 처리할 수 없음</li>
+        <li>실무 인력이 1년 단위 계약이어서 성과 확인 전에 담당자가 바뀔 수 있음</li>
+      </ul>
+    </section>
+
+    <section id="pr-s4">
+      <p class="kicker">SECTION 04</p>
+      <h2>1단계 캠페인 계획(안)</h2>
+      <h3 style="margin-top:0">가. 목표</h3>
+      <ul class="pts">
+        <li><b class="tag">주목표</b> 2027. 3.~8. 중점 3개국 학생의 공식 경로 입학 문의(DM·메신저·랜딩페이지 문의)를 받을 수 있는 플랫폼 운영. 기준값은 2026. 12.~2027. 2. 측정 후 확정</li>
+        <li><b class="tag">보조목표</b> 대상 계정 기관 명의 전환 완료(2027. 1.), 영문 랜딩페이지 개설(2027. 2.), 공식 계정 정기 게시 체계 구축</li>
+      </ul>
+
+      <h3>나. 타깃</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>타깃</th><th>동기와 불안</th><th>정보를 얻는 곳</th><th>단계</th></tr></thead>
+        <tbody>
+          <tr><td>① 해외 현지 고교 졸업 예정자<span class="s">우즈베키스탄·몽골·베트남, 18~22세</span></td><td>한국 취업 희망 / 비용·비자·생활 불안</td><td>Instagram, Telegram, Facebook, TikTok, 현지 유학원</td><td style="white-space:nowrap">인지 → 탐색</td></tr>
+          <tr><td>② 국내 어학당 재학 외국인(D-4)</td><td>학위 진학처 탐색 / 학비·장학·취업 경로</td><td>Instagram, 지인 추천, 설명회, 대학 홈페이지</td><td style="white-space:nowrap">탐색 → 지원</td></tr>
+          <tr><td>③ 영향자<span class="s">협력 유학원·학부모</span></td><td>정확하고 공식적인 자료 필요</td><td>랜딩페이지, 모집요강, 유학원 상담</td><td style="white-space:nowrap">지원 결정</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>다. 메시지 구조</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>메시지</th><th>내용</th><th>근거와 확보 상태</th></tr></thead>
+        <tbody>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">취업 경로</td><td>한국어교육센터 → 학위 → 뿌리산업 취업 경로가 한 캠퍼스에서 이어짐</td><td>2014년 양성대학 선정(확보). 졸업생·E-7-4 전환 실적 숫자(확보 필요)</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">비용</td><td>TOPIK 장학과 대구 생활비로 서울 대비 부담이 적음</td><td>모집요강 장학 기준(확인 필요), 서포터즈 실제 생활비 영상</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">생활</td><td>먼저 온 유학생이 직접 보여주는 기숙사·캠퍼스·대구 생활</td><td>K-Dream 서포터즈 숏폼(제작 중)</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">지원 절차</td><td>과정·서류·문의를 한 화면에서 확인</td><td>영문 랜딩페이지(신설)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">행동 유도 문구(CTA)는 모든 콘텐츠에서 '랜딩페이지에서 문의하기' 1개로 통일.</p>
+
+      <h3>라. 채널 전략</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>구분</th><th>채널</th><th>역할</th><th>부담</th></tr></thead>
+        <tbody>
+          <tr><td style="white-space:nowrap">보유</td><td>@kmcu_korean(허브), 유튜브 쇼츠, 영문 랜딩페이지</td><td>노출과 탐색, 문의 접수의 중심</td><td>중간</td></tr>
+          <tr><td style="white-space:nowrap">보유(재배포)</td><td>우즈베키스탄 Telegram, 몽골·베트남 Facebook</td><td>같은 영상을 자막·캡션만 바꿔 재게시(2단계)</td><td>낮음</td></tr>
+          <tr><td style="white-space:nowrap">획득</td><td>서포터즈 개인 계정 공동 게시, 협력 유학원 자료 키트, 대구시 박람회 부스 자료 제공 <a href="#pr-r20">[20]</a></td><td>학교 밖 네트워크로 확산</td><td>낮음</td></tr>
+          <tr><td style="white-space:nowrap">유료</td><td>반응이 검증된 릴스 소액 부스트(몽골·우즈베키스탄)</td><td>2단계, 기관 명의 결제 가능 후</td><td>중간</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>마. 예산</h3>
+      <p>1단계는 별도 예산 없이 추진(콘텐츠 제작은 서포터즈 활동 범위). 2단계 부스트 비용은 시범 금액과 재원(RISE 과제 예산 등)을 별도 협의. 세부 콘텐츠 일정과 제작물 목록은 <a href="#pr-s7">붙임</a> 참조.</p>
+
+      <h3 id="pr-landing">바. 랜딩페이지 시안</h3>
+      <div class="diag">
+        <p class="t">검토용 시안</p>
+        <h4>KMCU Study Guide · <a href="https://jaebong-choi.github.io/kmcu-study-guide/">jaebong-choi.github.io/kmcu-study-guide</a></h4>
+        <ul>
+          <li><b>구성</b> 어학과정·학위과정 진단(질문 5~7개, 약 1분, 개인정보 입력 없음), 비자 안내(D-2·D-4 절차, 잔고증명, 체류자격 변경), 전체 안내, 상담 문의</li>
+          <li><b>언어</b> 한국어, 영어, 스페인어, 베트남어, 중국어, 러시아어, 몽골어 7개 언어 선택 지원</li>
+          <li><b>운영 원칙</b> 개인 계정(GitHub)에서 만든 검토용 시안으로, 승인 후 본교 홈페이지 안의 페이지로 옮겨 기관 명의로 운영. 금액·기준은 게시 전 모집요강과 대조</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pr-s5">
+      <p class="kicker">SECTION 05</p>
+      <h2>추진 일정·성과 지표</h2>
+      <h3 style="margin-top:0">단계별 일정(안)</h3>
+      <div class="tbl"><table class="sched">
+        <thead><tr><th>2026. 12.</th><th>2027. 1.</th><th>2027. 2.</th><th>2027. 3.~</th></tr></thead>
+        <tbody>
+          <tr><td>계정 현황 조사·관리대장<br>기관 명의 전환 협의<br>프로필 영문화<br>출연 동의서 징구</td><td>하이라이트 재구성<br>서포터즈 공동 게시<br>랜딩페이지 원고·번역<br>문의 기준값 측정</td><td>영문 랜딩페이지 개설(UTM)<br>제4기 서포터즈 선발 반영<br>1단계 성과 정리</td><td>신학기 콘텐츠<br>국가별 재배포(2단계)<br>운영 매뉴얼 확정·보고</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>선행 조건</h3>
+      <ul class="pts">
+        <li>출연 동의서 징구 → 서포터즈 콘텐츠 공식 게시</li>
+        <li>영문 랜딩페이지 개설 → 프로필 링크·UTM 적용·국가별 재배포</li>
+        <li>기관 명의 결제 가능 → 유료 부스트</li>
+        <li>뿌리산업 실적 숫자 확보 → 취업 경로 메시지 사용</li>
+      </ul>
+
+      <h3>성과 지표 및 보고</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>지표</th><th>목표(안)</th><th>측정 방법</th></tr></thead>
+        <tbody>
+          <tr><td style="color:var(--ink);font-weight:500">기관 명의 전환</td><td>대상 계정 전체 완료</td><td>계정 관리대장</td></tr>
+          <tr><td style="color:var(--ink);font-weight:500">월 게시 콘텐츠 수</td><td>방학 중 월 8편, 학기 중 월 14편 내외</td><td>공식 계정 게시물(공동 게시 포함)</td></tr>
+          <tr><td style="color:var(--ink);font-weight:500">허브 계정 팔로워·국가별 도달</td><td>현재 376명. 목표는 1단계 추이 확인 후 설정</td><td>인스타그램 인사이트(국가별 시청자 비율)</td></tr>
+          <tr><td style="color:var(--ink);font-weight:500">공식 경로 입학 문의</td><td>플랫폼 구축(2027. 3.~8.)</td><td>국가별 DM·메신저·랜딩페이지 문의 건수, UTM 유입 수</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">월 1회 학사운영계획 보고에 지표를 포함하여, 담당자가 바뀌어도 기록이 남도록 함.</p>
+
+      <h3>위험 요인 및 대응</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>위험 요인</th><th>대응</th></tr></thead>
+        <tbody>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">계정 전환 협의 지연</td><td>전환 전까지 기존 계정에 공동 관리자부터 추가하고, 신규 게시는 허브 계정에 집중</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">서포터즈 활동 기간 종료<span class="s">제3기 2027. 2.</span></td><td>제4기 선발 공고에 콘텐츠 제작·계정 테이크오버 역할, 출연 동의서, 평가 지표를 미리 반영</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">방학 중 콘텐츠 공백</td><td>귀국 서포터즈가 고향에서 '한국 유학 준비' 영상을 촬영하도록 주제 배정</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">과장 홍보·오안내</td><td>비자·장학은 '조건을 충족하면 가능한 기회'로 표기, 금액은 '국제처 문의'로 안내, 게시 전 검수</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">담당자 교체</td><td>공동 관리자 3인 이상, 운영 매뉴얼·콘텐츠 캘린더 공유 폴더 보관, 월별 정기 보고</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">부서 간 합의 지연</td><td>@kmcu_korean 소관(유학생지원팀), 계정 개설(홍보), 홈페이지(정보전산) 협의를 12월 중 동시 진행</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">조사 한계: Meta 광고 라이브러리는 게재 중인 광고만 보여주고 예산은 공개하지 않음. 채널 수치는 2026. 11. 조회 기준.</p>
+    </section>
+
+    <section id="pr-s6">
+      <p class="kicker">SECTION 06</p>
+      <h2>논의 사항</h2>
+      <ol class="discuss">
+        <li>결정 요청 사항 3건(계정 기관 명의 전환, 허브 계정 일원화, 영문 랜딩페이지 신설) 추진 여부</li>
+        <li>본교 포지셔닝 메시지(취업 경로 중심)와 중점 대상 국가 순위가 본교 국적별 재학생·지원자 현황과 맞는지 여부</li>
+        <li>제4기 서포터즈 선발 시 콘텐츠 역할과 반응 지표 반영 여부 및 반영 비율(부산시 25% 사례 <a href="#pr-r12">[12]</a>)</li>
+        <li>사전 확인 필요 사항: 각 계정의 개설 명의·관리자 현황, 공식 SNS 개설 관련 본교 규정, 홈페이지 페이지 신설 절차, 모집요강의 장학 수치, 뿌리산업 과정 누적 졸업생·기량검증 통과자·E-7-4 전환자 수</li>
+      </ol>
+    </section>
+
+    <section id="pr-s7">
+      <p class="kicker">SECTION 07</p>
+      <h2>붙임</h2>
+      <h3 style="margin-top:0">붙임 1. 1단계 콘텐츠 캘린더(안)</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>기간</th><th>콘텐츠·작업</th><th>채널</th><th>담당</th><th>선행 조건</th></tr></thead>
+        <tbody>
+          <tr><td style="white-space:nowrap">12월 1~2주</td><td>계정 현황 조사·관리대장 작성, 프로필 영문화, 월별 주제 확정</td><td>전 채널</td><td>국제협력지원팀</td><td>-</td></tr>
+          <tr><td style="white-space:nowrap">12월 3~4주</td><td>하이라이트 6종 제작, 숏폼 2편(기숙사 룸투어, 대구 한 달 생활비)</td><td>Instagram, 쇼츠</td><td>서포터즈·유학생지원팀</td><td>출연 동의서</td></tr>
+          <tr><td style="white-space:nowrap">1월 1~2주</td><td>숏폼 2편(장학금 받는 법, 국적 인터뷰), 유튜브 기존 영상 영어 제목 정비</td><td>Instagram, YouTube</td><td>서포터즈·국제협력지원팀</td><td>-</td></tr>
+          <tr><td style="white-space:nowrap">1월 3~4주</td><td>숏폼 2편(고향에서 준비한 한국 유학, 한국어교육센터 하루), 랜딩페이지 원고·번역 검수</td><td>Instagram, 쇼츠</td><td>서포터즈·국제협력지원팀</td><td>-</td></tr>
+          <tr><td style="white-space:nowrap">2월 1~2주</td><td>숏폼 2편(뿌리산업 학과 실습, 선배 취업 이야기), 랜딩페이지 제작 요청·점검</td><td>Instagram, 랜딩</td><td>학과·정보전산</td><td>실적 숫자</td></tr>
+          <tr><td style="white-space:nowrap">2월 3~4주</td><td>영문 랜딩페이지 개설, 프로필 링크·UTM 적용, 제4기 서포터즈 선발 반영</td><td>랜딩, Instagram</td><td>국제처</td><td>랜딩 승인</td></tr>
+          <tr><td style="white-space:nowrap">3월</td><td>입학·환영 콘텐츠, 국가별 재배포 시작(Telegram·Facebook), 1단계 결과 보고</td><td>전 채널</td><td>국제처</td><td>랜딩 개설</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">캘린더의 20% 정도는 행사·이슈 대응용으로 비워 둠. 방학 중(12~2월)은 월 8편 내외로 운영.</p>
+
+      <h3>붙임 2. 제작물 목록(안)</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>제작물</th><th>내용</th><th>우선순위</th><th>시점</th></tr></thead>
+        <tbody>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">계정 관리대장</td><td>채널명, 연결 메일, 소유자·관리자, 권한, 개설일</td><td>필수</td><td class="num" style="white-space:nowrap">2026. 12.</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">영문 프로필 문구</td><td>계정 이름, 소개(포지셔닝 메시지), 문의 언어, 랜딩 링크</td><td>필수</td><td class="num" style="white-space:nowrap">2026. 12.</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">하이라이트 표지 6종</td><td>How to Apply, Scholarship, Dorm &amp; Cost, Career &amp; Visa, Daegu Life, Student Voices</td><td>필수</td><td class="num" style="white-space:nowrap">2026. 12.</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">출연 동의서 양식</td><td>초상권·개인정보 활용 동의(국문·영문)</td><td>필수</td><td class="num" style="white-space:nowrap">2026. 12.</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">서포터즈 숏폼</td><td>월별 지정 주제 15~40초, 첫 3초 질문형, 영어 자막</td><td>필수</td><td style="white-space:nowrap">매월</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">영문 랜딩페이지</td><td>과정·비자 경로, 비용·장학, 비자 서류, 학생 생활, 문의(시안 제작 완료 → 본교 홈페이지 이관)</td><td>필수</td><td class="num" style="white-space:nowrap">2027. 2.</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">운영 매뉴얼</td><td>게시 절차, 검수 기준, 월별 주제 템플릿</td><td>필수</td><td class="num" style="white-space:nowrap">2027. 3.</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">협력 유학원 자료 키트</td><td>랜딩 링크, 대표 영상, 1쪽 안내문(영어)</td><td>선택</td><td class="num" style="white-space:nowrap">2027. 3.</td></tr>
+          <tr><td style="white-space:nowrap;color:var(--ink);font-weight:500">다국어 자막·캡션</td><td>우즈베크어(또는 러시아어)·몽골어·베트남어</td><td>선택(2단계)</td><td class="num" style="white-space:nowrap">2027. 3.~</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="pr-s8">
+      <p class="kicker">SECTION 08</p>
+      <h2>참고자료</h2>
+      <details open>
+        <summary>출처 목록</summary>
+        <ol class="refs">
+          <li id="pr-r1">아시아투데이, 「"K팝 듣다 한국 유학 꿈꿔요"…하노이 달군 한국유학박람회」(2026년 교육기본통계 인용), 2026. 11., <a href="https://www.asiatoday.co.kr/kn/view.php?key=20261101010000154">asiatoday.co.kr</a></li>
+          <li id="pr-r2">Korea JoongAng Daily, 「International student enrollment surges at Korean junior colleges」, 2026. 11., <a href="https://www.koreajoongangdaily.com/korea/international-student-enrollment-surges-at-korean-junior-colleges/12950666">koreajoongangdaily.com</a></li>
+          <li id="pr-r3">Meta 광고 라이브러리(국가별 현지어 키워드 직접 조회, 2026. 11.), <a href="https://www.facebook.com/ads/library/">facebook.com/ads/library</a></li>
+          <li id="pr-r4">우송대·단국대·영진전문대(@yeungjin_intlstudents)·본교 공식 SNS(직접 조회, 2026. 11.), <a href="https://www.instagram.com/yeungjin_intlstudents/">instagram.com</a></li>
+          <li id="pr-r5">IDP Connect, 「Media preferences and the power of the peer-to-peer student voice」, <a href="https://partners.idp.com/articles/data-intelligence/media-preferences-and-the-power-of-the-peer-to-peer-student-voice">partners.idp.com</a></li>
+          <li id="pr-r6">Go! Go! Hanguk, 제휴 어학당 목록 및 회사 연혁(2026. 11. 확인), <a href="https://gogohanguk.com/en/about-us/">gogohanguk.com</a></li>
+          <li id="pr-r7">쿠키뉴스, 「계명문화대, '뿌리산업 외국인 기술인력 양성대학 평가'서 최고 평가등급 획득」, 2022. 1. 3., <a href="https://www.kukinews.com/article/view/kuk202201030222">kukinews.com</a></li>
+          <li id="pr-r8">산업통상부 공고 제2025-129호, 「2026년 외국인 숙련기능인력 비자(E-7-4) 전환 관련 뿌리산업 분야 외국인유학생 상반기 기량검증 계획」, 2025. 12. 29., <a href="https://www.motir.go.kr/kor/article/ATCLc01b2801b/70723/view">motir.go.kr</a></li>
+          <li id="pr-r9">대학저널, 「영남이공대, '뿌리산업 외국인 기술인력 양성대학' 최종 선정」, 2026. 2. 18., <a href="https://dhnews.co.kr/news/view/1065596824216385">dhnews.co.kr</a></li>
+          <li id="pr-r10">매일신문, 대구 지역특화형 비자(F-2-R) 대상 지역(서구·남구) 관련 보도, 2025. 4., <a href="https://www.imaeil.com/page/view/2025042016504136300">imaeil.com</a></li>
+          <li id="pr-r11">잡플로이, 「2026년 지역특화형 비자 최신 정리」(법무부고시 제2026-248호, 2026. 8. 3. 시행 내용 정리), <a href="https://www.jobploy.kr/ko/content/new-visas-2026-e74r-f2r-f4r">jobploy.kr</a></li>
+          <li id="pr-r12">동서대 IEC, 「2025년도 부산 외국인 유학생 서포터즈 운영계획」, <a href="https://uni.dongseo.ac.kr/iec/index.php?pCode=MN5000027&amp;pg=1&amp;mode=fdn&amp;idx=561&amp;num=1">dongseo.ac.kr</a></li>
+          <li id="pr-r13">경동대 KUAC 외국인 모집 전용 사이트(2026. 11. 확인), <a href="https://kuacglobal.com/">kuacglobal.com</a></li>
+          <li id="pr-r14">계명문화대학교 국제처(한국어교육센터) 홈페이지(직접 확인, 2026. 11.), <a href="https://www.kmcu.ac.kr/global">kmcu.ac.kr</a></li>
+          <li id="pr-r15">외국인 지원자용 랜딩페이지 시안 「KMCU Study Guide」(국제협력지원팀 제작, 2026. 11.), <a href="https://jaebong-choi.github.io/kmcu-study-guide/">jaebong-choi.github.io</a></li>
+          <li id="pr-r16">지역내일, 「영진전문대 9년 연속 교육국제화역량 인증 대학 선정」, 2026. 3. 6., <a href="https://www.localnaeil.com/News/View/654117">localnaeil.com</a></li>
+          <li id="pr-r17">지역내일, 「영진전문대, 법무부 '육성형 전문기술학과' 대구 전문대학 유일 선정」, 2026. 3. 5., <a href="https://www.localnaeil.com/News/View/654115">localnaeil.com</a></li>
+          <li id="pr-r18">쿠키뉴스, 「영남이공대, '교육국제화역량 인증대학' 선정」, 2026. 3. 16., <a href="https://www.kukinews.com/article/view/kuk202603160036">kukinews.com</a></li>
+          <li id="pr-r19">메트로신문, 계명대 교육국제화역량 인증제 3년 연속 우수인증 보도, 2026. 2. 13., <a href="https://www.metroseoul.co.kr/article/20260213500003">metroseoul.co.kr</a></li>
+          <li id="pr-r20">경북매일, 「대구시, 베트남서 유학생 유치전…전국 지자체 유일 참가」, 2026. 11. 1., <a href="https://kbmaeil.com/article/20261101500233">kbmaeil.com</a></li>
+        </ol>
+      </details>
+    </section>
+
+    <footer>계명문화대학교 국제처 국제협력지원팀 · 외국인 유학생 홍보 현황 분석 및 국제처 추진 계획(안) · 2026. 11.</footer>
+  </div></main>
+</div>
+</div>
+
 <script>
-// tabs
-document.querySelectorAll('.tabs button').forEach(function(b){
-  b.addEventListener('click',function(){
-    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected','false')});
-    document.querySelectorAll('.panel').forEach(function(p){p.hidden=true});
-    b.setAttribute('aria-selected','true');
-    document.getElementById(b.dataset.tab).hidden=false;
+var FONT="'Noto Sans KR', 'Noto Sans', sans-serif";
+var TITLES={gz:'글로벌 존 2027 운영방안', pr:'외국인 유학생 홍보 추진 계획'};
+var drawn={};
+
+// 섹션 안 사례 탭 (탭 묶음별로 따로 동작)
+document.querySelectorAll('.tabs').forEach(function(group){
+  var box=group.parentElement;
+  group.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){
+      group.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-selected','false')});
+      box.querySelectorAll('.panel').forEach(function(p){p.hidden=true});
+      b.setAttribute('aria-selected','true');
+      document.getElementById(b.dataset.tab).hidden=false;
+    });
   });
 });
-// scrollspy
-var links=document.querySelectorAll('.toc a, .jump a');
-var secs=[...document.querySelectorAll('main section')];
-function spy(){
-  var y=window.scrollY+120, cur=secs[0].id;
-  secs.forEach(function(s){ if(s.offsetTop<=y) cur=s.id; });
-  links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+cur); });
+
+// 상단 보고서 탭
+var cur='gz';
+function showView(v, keepScroll){
+  cur=v;
+  document.querySelectorAll('.view').forEach(function(el){ el.hidden = el.id!=='view-'+v; });
+  document.querySelectorAll('.viewtabs button').forEach(function(b){ b.setAttribute('aria-selected', b.dataset.view===v ? 'true':'false'); });
+  document.title=TITLES[v];
+  if(!keepScroll) window.scrollTo({top:0,behavior:'instant'});
+  drawView(v);
+  spy();
 }
-window.addEventListener('scroll',spy,{passive:true}); spy();
-// charts
-var FONT="'Noto Sans KR', 'Noto Sans', sans-serif";
-function drawCharts(){
-  if(!window.Chart) return;
+document.querySelectorAll('.viewtabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    showView(b.dataset.view);
+    try{ history.replaceState(null,'', b.dataset.view==='pr' ? '#pr' : '#gz'); }catch(e){}
+  });
+});
+
+// 스크롤 위치에 맞춰 목차 표시
+function spy(){
+  var view=document.getElementById('view-'+cur); if(!view) return;
+  var secs=[...view.querySelectorAll('main section')]; if(!secs.length) return;
+  var y=window.scrollY+150, id=secs[0].id;
+  secs.forEach(function(s){ if(s.offsetTop<=y) id=s.id; });
+  view.querySelectorAll('.toc a, .jump a').forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+id); });
+}
+window.addEventListener('scroll',spy,{passive:true});
+
+// 차트
+function lblPlugin(data,horizontal){
+  return {id:'lbl',afterDatasetsDraw:function(c){var ctx=c.ctx;ctx.save();ctx.font='700 12px '+FONT;ctx.fillStyle='#111827';
+    c.getDatasetMeta(0).data.forEach(function(el,i){
+      var t=data[i].toLocaleString();
+      if(horizontal){ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(t,el.x+6,el.y);}
+      else{ctx.textAlign='center';ctx.fillText(t,el.x,el.y-6);}
+    });ctx.restore();}};
+}
+function bar(id,data){
+  new Chart(document.getElementById(id),{
+    type:'bar',
+    data:{labels:['2023','2024','2025'],datasets:[{data:data,backgroundColor:['#CBD5E1','#9CA3AF','#C8102E'],borderRadius:0,barPercentage:.55}]},
+    options:{maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},
+      layout:{padding:{top:22}},
+      scales:{y:{display:false,beginAtZero:true},x:{grid:{display:false},border:{color:'#111827'}}}},
+    plugins:[lblPlugin(data,false)]
+  });
+}
+function hbar(id,labels,data,colors){
+  new Chart(document.getElementById(id),{
+    type:'bar',
+    data:{labels:labels,datasets:[{data:data,backgroundColor:colors,borderRadius:0,barPercentage:.6}]},
+    options:{indexAxis:'y',maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},
+      layout:{padding:{right:56}},
+      scales:{x:{display:false,beginAtZero:true},y:{grid:{display:false},border:{color:'#111827'},ticks:{color:'#374151'}}}},
+    plugins:[lblPlugin(data,true)]
+  });
+}
+function drawView(v){
+  if(drawn[v]||!window.Chart) return;
+  drawn[v]=true;
   Chart.defaults.font.family=FONT;
   Chart.defaults.color='#6B7280';
-  function bar(id,data,fmt){
-    new Chart(document.getElementById(id),{
-      type:'bar',
-      data:{labels:['2023','2024','2025'],datasets:[{data:data,backgroundColor:['#CBD5E1','#9CA3AF','#C8102E'],borderRadius:0,barPercentage:.55}]},
-      options:{maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},
-        layout:{padding:{top:22}},
-        scales:{y:{display:false,beginAtZero:true},x:{grid:{display:false},border:{color:'#111827'}}}},
-      plugins:[{id:'lbl',afterDatasetsDraw:function(c){var ctx=c.ctx;ctx.save();ctx.font='700 12px '+FONT;ctx.fillStyle='#111827';ctx.textAlign='center';
-        c.getDatasetMeta(0).data.forEach(function(el,i){ctx.fillText(data[i].toLocaleString(),el.x,el.y-6);});ctx.restore();}}]
-    });
+  if(v==='gz'){
+    bar('cBudget',[18500,12316,2900]);
+    bar('cTalk',[528,1449,1500]);
+  }else{
+    hbar('cAds',['베트남','우즈베키스탄','몽골','네팔'],[490,450,22,15],['#9CA3AF','#9CA3AF','#003876','#CBD5E1']);
+    hbar('cFollow',['우송대','단국대','본교 @kmcu_korean','영진전문대','본교 @kmcu_intl'],[11000,8341,376,142,113],['#9CA3AF','#9CA3AF','#C8102E','#CBD5E1','#CBD5E1']);
   }
-  bar('cBudget',[18500,12316,2900]);
-  bar('cTalk',[528,1449,1500]);
 }
-// 웹폰트 로드 후 차트를 그려 라벨에도 Noto Sans KR 적용
-if(document.fonts&&document.fonts.ready){document.fonts.ready.then(drawCharts);}else{drawCharts();}
+
+// 첫 화면: 주소의 #pr 또는 #pr-섹션이면 홍보대사 탭으로 시작
+function init(){
+  var h=location.hash||'';
+  var v=(h==='#pr'||h.indexOf('#pr-')===0)?'pr':'gz';
+  showView(v,true);
+  if(h.length>3&&h!=='#gz'&&h!=='#pr'){var t=document.querySelector(h);if(t)t.scrollIntoView();}
+}
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(init);}else{init();}
 </script>
 </body>
 </html>
