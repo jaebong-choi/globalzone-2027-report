@@ -65,6 +65,12 @@ p{margin:0 0 14px}
 
 .quote{background:var(--surface);border-left:3px solid var(--accent);padding:22px 26px;margin:26px 0;font-family:var(--font);font-size:18px;line-height:1.65;color:var(--ink);font-weight:500}
 
+/* report bullets */
+ul.pts{list-style:none;padding:0;margin:0 0 14px}
+ul.pts li{position:relative;padding-left:16px;margin-bottom:6px}
+ul.pts li::before{content:"";position:absolute;left:2px;top:.82em;width:7px;height:1px;background:var(--ink)}
+ol.discuss li b{color:var(--ink);font-weight:500;margin-right:6px}
+
 /* diagnosis callout */
 .diag{border:1px solid var(--line);border-top:3px solid var(--accent);background:var(--surface);padding:20px 24px;margin:24px 0}
 .diag .t{font-size:11.5px;letter-spacing:.12em;color:var(--accent);font-weight:700;margin:0 0 4px}
@@ -74,7 +80,7 @@ p{margin:0 0 14px}
 .diag li:last-child{margin-bottom:0}
 .diag li b{color:var(--ink);font-weight:500}
 
-/* AS-IS / TO-BE */
+/* 현행 vs 개편안 표 */
 table.ab td:first-child{white-space:nowrap;color:var(--ink);font-weight:500;width:108px}
 table.ab th.to,table.ab td.to{border-left:1px solid var(--line)}
 table.ab td.to{color:var(--ink)}
@@ -187,7 +193,7 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
 </header>
 
 <nav class="jump" aria-label="섹션 이동">
-  <a href="#s1">요약</a><a href="#s2">현황</a><a href="#s3">타 대학 사례</a><a href="#s4">운영방안</a><a href="#s5">논의 사항</a><a href="#s6">참고자료</a>
+  <a href="#s1">요약</a><a href="#s2">현황</a><a href="#s3">타 대학 사례</a><a href="#s4">운영방안</a><a href="#s5">2027 계획</a><a href="#s6">참고자료</a>
 </nav>
 
 <div class="wrap">
@@ -197,14 +203,14 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
     <a href="#s2">02 운영 현황·진단</a>
     <a href="#s3">03 타 대학 운영사례</a>
     <a href="#s4">04 2027 운영방안(안)</a>
-    <a href="#s5">05 논의 사항</a>
+    <a href="#s5">05 2027 계획(안)</a>
     <a href="#s6">06 참고자료</a>
   </aside>
 
   <main><div class="col">
     <p class="overline">계명문화대학교 국제처 · 국제협력지원팀</p>
     <h1>글로벌 존 2027 운영방안(안)</h1>
-    <p class="lede">2023~2025년 운영 실적, 2026년 운영 현황 진단, 국내 대학의 글로벌 라운지 운영사례를 바탕으로 추가 예산 없이 운영 방식을 개편하는 방안을 정리했다.</p>
+    <p class="lede">2023~2025년 운영 실적과 2026년 운영 현황을 점검하고, 국내 대학 글로벌 라운지 운영사례를 참고하여 2027년 운영 개편(안)을 정리함.</p>
     <dl class="metagrid">
       <div><dt>작성 부서</dt><dd>국제처 국제협력지원팀</dd></div>
       <div><dt>작성 일자</dt><dd class="num">2026. 11. 20.</dd></div>
@@ -215,16 +221,22 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
     <section id="s1">
       <p class="kicker">SECTION 01</p>
       <h2>요약</h2>
-      <p>글로벌 존은 2023년 체험 행사 중심에서 2025년 외국인 버디 프리토킹 중심으로 바뀌었다. 그 사이 예산 집행액은 18,500천원에서 2,900천원으로 줄었지만, 프리토킹 참여는 528명에서 1,500명으로, 스탬프 마일리지 참여는 15명에서 129명으로 늘었다.</p>
-      <p>그러나 2026년에는 스터디, 교류 모임, 정규 행사 없이 근로학생 1인이 공간에 상주하는 형태로 운영되면서, 2025년까지 쌓은 프로그램 기반이 이어지지 않았다.</p>
-      <div class="quote">2025년까지의 프로그램 중심 방향은 유효했다. 2027년에는 1인 공간 관리 구조에서 벗어나 정기 프로그램을 다시 편성하고, 참여를 성과로 연결하는 방식으로 운영을 전면 개편한다.</div>
-      <p>국내 대학은 글로벌 라운지를 예약제 소그룹, 1:1 언어교환, 해외 프로그램 선발 연계라는 세 방식으로 운영한다. 본교는 2027년에 이 세 가지를 추가 예산 없이 적용하고, 특히 파견 인원이 20명으로 늘어나는 글로벌 현장학습과 연결해 지원자 확보 경로로 활용한다.</p>
+      <ul class="pts">
+        <li>2023년 체험 행사 중심에서 2025년 외국인 버디 프리토킹 중심으로 운영 방식 전환</li>
+        <li>예산 집행액은 18,500천원(2023)에서 2,900천원(2025)으로 감소했으나, 프리토킹 참여는 528명에서 1,500명, 스탬프 마일리지 참여는 15명에서 129명으로 증가</li>
+        <li>2026년은 스터디·교류 모임·정규 행사 없이 버디 1인(근로학생)이 공간을 관리하는 형태로 운영되어, 2025년까지 이어온 프로그램 운영이 중단됨</li>
+      </ul>
+      <div class="quote">2026년 버디 1인 공간 관리 체제의 한계 확인<br>2027년 다인 버디 체제를 통한 프로그램 운영 필요</div>
+      <ul class="pts">
+        <li>타 대학에서 운영 중인 예약제 소그룹, 1:1 언어교환, 해외 프로그램 선발 연계 방식을 현행 예산 범위에서 도입</li>
+        <li>2027년 파견 인원이 20명으로 늘어나는 글로벌 현장학습과 연계하여 지원자 확보 경로로 활용</li>
+      </ul>
     </section>
 
     <section id="s2">
       <p class="kicker">SECTION 02</p>
       <h2>운영 현황과 2026 진단</h2>
-      <h3 style="margin-top:0">2023~2025: 예산은 줄고 참여는 늘었다</h3>
+      <h3 style="margin-top:0">2023~2025: 예산 감소, 참여 증가</h3>
       <div class="kpi">
         <div><div class="v accent">1,500<small>명</small></div><div class="l">2025 버디 프리토킹 참여(연인원)</div></div>
         <div><div class="v">710<small>명</small></div><div class="l">2025 학과별 글로벌 존 투어</div></div>
@@ -248,45 +260,49 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
       <div class="tbl"><table>
         <thead><tr><th>연도</th><th class="n">예산 집행</th><th class="n">프리토킹</th><th class="n">투어</th><th class="n">마일리지</th><th class="n">스터디</th></tr></thead>
         <tbody>
-          <tr><td class="n" style="text-align:left">2023</td><td class="n">18,500</td><td class="n">528</td><td class="n">382</td><td class="n">15</td><td class="n">–</td></tr>
-          <tr><td class="n" style="text-align:left">2024</td><td class="n">12,316</td><td class="n">1,449</td><td class="n">685</td><td class="n">60</td><td class="n">–</td></tr>
+          <tr><td class="n" style="text-align:left">2023</td><td class="n">18,500</td><td class="n">528</td><td class="n">382</td><td class="n">15</td><td class="n">-</td></tr>
+          <tr><td class="n" style="text-align:left">2024</td><td class="n">12,316</td><td class="n">1,449</td><td class="n">685</td><td class="n">60</td><td class="n">-</td></tr>
           <tr class="hl"><td class="n" style="text-align:left">2025</td><td class="n">2,900</td><td class="n">1,500</td><td class="n">710</td><td class="n">129</td><td class="n">35</td></tr>
         </tbody>
       </table></div>
-      <p class="note">예산 단위: 천원. 2023년에는 아로마테라피, 유리 티코스터, 캔들 만들기 등 체험 행사(30~35명)를 함께 운영했다. 자료: 글로벌 존 운영현황(23~25).</p>
+      <p class="note">예산 단위: 천원. 2023년에는 아로마테라피, 유리 티코스터, 캔들 만들기 등 체험 행사(30~35명) 병행. 자료: 글로벌 존 운영현황(23~25).</p>
 
-      <h3>남은 과제</h3>
-      <p>프리토킹 1,500명은 연인원이라 실제 참여 학생 수와 재방문율을 알 수 없다. 버디 2명이 약 370시간을 맡는 구조여서 운영 시간을 늘리기도 어렵다. 참여가 해외 프로그램 지원이나 어학 성과로 이어졌는지도 확인되지 않는다.</p>
+      <h3>2025년 기준 운영상 한계</h3>
+      <ul class="pts">
+        <li>프리토킹 1,500명은 연인원 집계로, 실제 참여 학생 수와 재방문율 파악 불가</li>
+        <li>버디 2명이 연간 약 370시간을 담당하는 구조로, 운영 시간 확대에 한계</li>
+        <li>참여 실적이 해외 프로그램 지원이나 어학 성과로 이어졌는지 확인되지 않음</li>
+      </ul>
 
-      <h3>2026: 프로그램 없이 1인 상주로 운영</h3>
+      <h3>2026: 버디 1인 공간 관리 체제</h3>
       <div class="diag">
         <p class="t">현황 진단</p>
-        <h4>공간은 열려 있었지만, 학생이 참여할 프로그램이 없었다</h4>
+        <h4>공간 관리 위주 운영으로 프로그램 운영 중단</h4>
         <ul>
-          <li><b>운영 형태</b> 2026년 글로벌 존은 별도의 스터디, 교류 모임, 정규 행사 없이 근로학생 1인(마르나)이 단독 상주하는 형태로 운영됐다.</li>
-          <li><b>원인</b> 개인의 근무 문제가 아니라, 프로그램이 편성되지 않은 채 공간 관리를 1인에게 맡긴 운영 구조의 한계다.</li>
-          <li><b>영향</b> 2025년 프리토킹·스터디로 쌓은 참여 흐름이 끊겼고, 프로그램 단위 참여 기록이 없어 성과를 보고하거나 해외 프로그램 선발과 연결할 근거도 남지 않았다.</li>
-          <li><b>방향</b> 2027년에는 공간 관리 중심에서 프로그램 운영 중심으로 운영 방식을 전면 개편한다.</li>
+          <li><b>운영 형태</b> 스터디·교류 모임·정규 행사 없이 버디 1인(근로학생 마르나)이 단독 상주하며 공간 관리</li>
+          <li><b>원인</b> 프로그램 편성 없이 공간 관리를 1인에게 맡긴 운영 구조의 문제로, 개인 근무와는 별개 사안</li>
+          <li><b>영향</b> 2025년 프리토킹·스터디로 형성된 참여 흐름 단절. 프로그램 단위 참여 기록이 없어 성과 보고 및 해외 프로그램 선발 연계 근거 부재</li>
+          <li><b>개편 방향</b> 2027년 공간 관리 중심에서 다인 버디 체제의 프로그램 운영 중심으로 전환</li>
         </ul>
       </div>
 
       <div class="tbl"><table class="ab">
-        <thead><tr><th>구분</th><th>AS-IS<span class="yr">2026</span></th><th class="to">TO-BE<span class="yr">2027</span></th></tr></thead>
+        <thead><tr><th>구분</th><th>현행<span class="yr">2026</span></th><th class="to">개편안<span class="yr">2027</span></th></tr></thead>
         <tbody>
-          <tr><td>운영 형태</td><td>근무 시간 중 공간 개방·관리 위주</td><td class="to">예약제 소그룹과 정기 프로그램 중심 운영</td></tr>
-          <tr><td>인력 구조</td><td>근로학생(마르나) 1인 단독 근무</td><td class="to">근로학생을 프로그램 호스트로 역할 재정의, 외국인 버디·홍보대사 서포터즈와 연계</td></tr>
+          <tr><td>운영 형태</td><td>근무 시간 중 공간 개방·관리 위주</td><td class="to">상시 개방(자유 프리토킹)과 예약제 소그룹 병행</td></tr>
+          <tr><td>인력 구조</td><td>버디 1인(근로학생) 단독 근무</td><td class="to">다인 버디 체제. 근로학생은 예약 관리·방문 기록·진행 보조, 외국인 버디·홍보대사는 프리토킹·프로그램 진행 담당</td></tr>
           <tr><td>주요 활동</td><td>스터디·교류 모임·정규 행사 없음</td><td class="to">주간 스터디(6주 과정), 월 1회 나라별 프리토킹 데이, 학기 단위 1:1 언어교환</td></tr>
           <tr><td>공간 성격</td><td>자율 이용 공간</td><td class="to">교류·학습 프로그램 거점</td></tr>
-          <tr><td>관리 기준(KPI)</td><td>프로그램 단위 참여 지표 없음</td><td class="to">실인원, 재방문율, 프로그램 이수율, 해외 프로그램 지원 연계</td></tr>
+          <tr><td>관리 기준</td><td>프로그램 단위 참여 지표 없음</td><td class="to">실인원, 재방문율, 프로그램 이수율, 해외 프로그램 지원 연계</td></tr>
         </tbody>
       </table></div>
-      <p class="note">2026년 참여 인원 자료는 이 보고서에 포함하지 않았다. TO-BE 항목은 SECTION 04의 운영방안과 같다.</p>
+      <p class="note">2026년 참여 인원 자료는 본 보고서에 미포함. 개편안 항목은 SECTION 04 운영방안과 연계.</p>
     </section>
 
     <section id="s3">
       <p class="kicker">SECTION 03</p>
       <h2>타 대학 운영사례</h2>
-      <p>국내 대학의 글로벌 존, 글로벌 라운지, English Lounge 운영사례를 공지와 보도자료로 조사했다. 전문대학 사례는 공개 자료가 적어 4년제 대학 사례가 대부분이다.</p>
+      <p>국내 대학의 글로벌 존, 글로벌 라운지, English Lounge 운영사례를 각 대학 공지와 보도자료로 조사함. 전문대학은 공개 자료가 적어 4년제 대학 사례 위주로 정리.</p>
 
       <div class="tabs" role="tablist">
         <button role="tab" aria-selected="true" data-tab="p1">예약제 소그룹</button>
@@ -296,94 +312,96 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding-top:16px;font-si
       </div>
 
       <div class="panel" id="p1" data-title="① 예약제 소그룹" role="tabpanel">
-        <div class="case"><b>창원대 English Lounge</b> 원어민 상주 시간표를 공개하고 최소 1일 전에 예약을 받는다. 그룹스터디는 주 1회 60분이며, 예약 후 불참이 2회 쌓이면 참여를 제한한다. <a href="#r1">[1]</a></div>
-        <div class="case"><b>한성대 Global Lounge</b> 4~8명 소그룹 회화 'Group Speak'을 상·하반기 각 6주 운영하고, 'English Corner'는 매주 상시 예약을 받는다. <a href="#r2">[2]</a></div>
-        <div class="case"><b>서울시립대 글로벌 라운지</b> 외국인 교환학생이 시간대별로 상주하며, 오전에는 스터디 프로그램만 운영한다. <a href="#r4">[4]</a></div>
-        <div class="implic"><span>IMPLICATION</span>스터디 그룹(2025년 35명)을 정원 4~8명, 6주 과정, 불참 제한 규칙으로 정리하면 운영이 안정되고 성과 보고도 쉬워진다.</div>
+        <div class="case"><b>창원대 English Lounge</b> 원어민 상주 시간표 공개, 최소 1일 전 예약. 그룹스터디는 주 1회 60분 운영, 예약 후 불참 2회 시 참여 제한. <a href="#r1">[1]</a></div>
+        <div class="case"><b>한성대 Global Lounge</b> 4~8명 소그룹 회화 'Group Speak'을 상·하반기 각 6주 운영. 'English Corner'는 매주 상시 예약. <a href="#r2">[2]</a></div>
+        <div class="case"><b>서울시립대 글로벌 라운지</b> 외국인 교환학생이 시간대별로 상주. 오전에는 스터디 프로그램만 운영. <a href="#r4">[4]</a></div>
+        <div class="implic"><span>IMPLICATION</span>2025년 스터디 그룹(35명)을 정원 4~8명, 6주 과정, 불참 제한 규칙으로 정비하면 운영이 안정되고 성과 보고가 쉬워짐. 서울시립대처럼 시간대를 나누면 상시 개방과 예약제 병행 가능.</div>
       </div>
 
       <div class="panel" id="p2" data-title="② 1:1 언어교환" role="tabpanel" hidden>
-        <div class="case"><b>중앙대</b> 한국인 학부생과 한국어과정 외국인 학생을 1:1 또는 1:2로 매칭한다. 4월·10월에 모집하고 한국인 학생에게 사회봉사 학점을 준다. <a href="#r5">[5]</a></div>
-        <div class="case"><b>고려대</b> 배우고 싶은 언어와 가르칠 수 있는 언어를 지원서로 받아 1순위 기준으로 매칭한다. <a href="#r6">[6]</a></div>
-        <div class="case"><b>공주대</b> 성별·학과·성향을 고려해 매칭하고, 5회 이상 활동하면 활동 지원금을 준다. <a href="#r8">[8]</a></div>
-        <div class="implic"><span>IMPLICATION</span>버디 2명 상주 체제의 시간 한계를 추가 인건비 없이 보완하고, 유학생 한국 생활 적응 지원 효과도 함께 얻는다.</div>
+        <div class="case"><b>중앙대</b> 한국인 학부생과 한국어과정 외국인 학생을 1:1 또는 1:2로 매칭. 4월·10월 모집, 한국인 학생에게 사회봉사 학점 부여. <a href="#r5">[5]</a></div>
+        <div class="case"><b>고려대</b> 배우고 싶은 언어와 가르칠 수 있는 언어를 지원서로 받아 1순위 기준으로 매칭. <a href="#r6">[6]</a></div>
+        <div class="case"><b>공주대</b> 성별·학과·성향을 고려해 매칭, 5회 이상 활동 시 활동 지원금 지급. <a href="#r8">[8]</a></div>
+        <div class="implic"><span>IMPLICATION</span>추가 인건비 없이 버디 상주 시간의 한계를 보완할 수 있고, 유학생 한국 생활 적응 지원 효과도 기대됨.</div>
       </div>
 
       <div class="panel" id="p3" data-title="③ 실적 · 선발 연계" role="tabpanel" hidden>
-        <div class="case"><b>영진전문대</b> 재학생이 만든 '글로벌 존 예약시스템'을 2020년 열었고, 오픈 10여 일 만에 530건이 이용됐다. 대학은 참여 횟수를 반영해 글로벌 장학금을 주겠다고 밝혔다. <a href="#r9">[9]</a><a href="#r10">[10]</a></div>
-        <div class="case"><b>가천대</b> 해외 파견 학생 선발 1차 서류심사에 학점·영어 성적과 함께 국제화 프로그램 참여 실적을 반영한다. <a href="#r12">[12]</a></div>
-        <div class="case"><b>제주대</b> 유학생 비교과 참여를 마일리지로 쌓고 누적 점수로 장학생을 선발한다(1점 5,000원 환산). <a href="#r11">[11]</a></div>
-        <div class="implic"><span>IMPLICATION</span>본교 마일리지는 이미 장학금과 연결되어 있다. 글로벌 현장학습 선발에 소폭 반영하면 2027년 20명 파견의 지원자 확보로 바로 이어진다. 다만 대부분 대학이 학점·어학·면접 중심으로 선발하므로 가점은 작게 둔다.</div>
+        <div class="case"><b>영진전문대</b> 재학생이 개발한 '글로벌 존 예약시스템'을 2020년 개설, 오픈 10여 일 만에 530건 이용. 참여 횟수를 반영한 글로벌 장학금 지급 계획 발표. <a href="#r9">[9]</a><a href="#r10">[10]</a></div>
+        <div class="case"><b>가천대</b> 해외 파견 학생 선발 1차 서류심사에 학점·영어 성적과 함께 국제화 프로그램 참여 실적 반영. <a href="#r12">[12]</a></div>
+        <div class="case"><b>제주대</b> 유학생 비교과 참여를 마일리지로 적립, 누적 점수로 장학생 선발(1점 5,000원 환산). <a href="#r11">[11]</a></div>
+        <div class="implic"><span>IMPLICATION</span>본교 마일리지는 이미 장학금과 연계되어 있음. 글로벌 현장학습 선발에 소폭 반영하면 2027년 20명 파견의 지원자 확보에 활용 가능. 다만 타 대학도 학점·어학·면접 중심으로 선발하므로 가점 비중은 작게 설정.</div>
       </div>
 
       <div class="panel" id="p4" data-title="④ 유학생 주도 행사" role="tabpanel" hidden>
-        <div class="case"><b>건국대 URI WORLD</b> 글로벌라운지에서 교환·방문학생이 국가별 부스를 운영했고 재학생 약 200명이 참여했다. <a href="#r16">[16]</a></div>
-        <div class="case"><b>단국대 · 동신대</b> 2026년 국가별 문화축제에 각각 약 500명이 참여했다. <a href="#r17">[17]</a><a href="#r18">[18]</a></div>
-        <div class="implic"><span>IMPLICATION</span>대규모 축제 대신 버디·외국인 홍보대사 국적별 월 1회 대화형 행사로 시작하면 재료비 없이 투어 홍보 소재를 만들 수 있다.</div>
+        <div class="case"><b>건국대 URI WORLD</b> 글로벌라운지에서 교환·방문학생이 국가별 부스 운영, 재학생 약 200명 참여. <a href="#r16">[16]</a></div>
+        <div class="case"><b>단국대 · 동신대</b> 2026년 국가별 문화축제에 각각 약 500명 참여. <a href="#r17">[17]</a><a href="#r18">[18]</a></div>
+        <div class="implic"><span>IMPLICATION</span>대규모 축제보다 버디·외국인 홍보대사 국적별 월 1회 대화형 행사로 시작하면 재료비 부담 없이 투어 홍보 소재 확보 가능.</div>
       </div>
     </section>
 
     <section id="s4">
       <p class="kicker">SECTION 04</p>
       <h2>2027 운영방안(안)</h2>
-      <p>2026년의 1인 상주·무프로그램 구조를 바꾸기 위해 2027년 개편은 세 가지 축으로 진행한다. 아래 다섯 가지 방안은 각 축을 실행하는 수단이다.</p>
+      <p>2026년 버디 1인 공간 관리 체제를 개편하기 위해 2027년 운영을 세 가지 축으로 재편함. 아래 다섯 가지 방안은 각 축의 실행 수단임.</p>
       <div class="axes">
-        <div><span class="k">축 1</span><b>근로학생 역할 재정의</b><p>공간 관리자에서 프로그램 호스트로 바꾼다. 예약 관리, 스터디 진행 보조, 방문 기록을 맡고 외국인 버디·홍보대사와 시간표를 나눈다.</p><span class="map">관련 방안 2 · 4 · 5</span></div>
-        <div><span class="k">축 2</span><b>정기 프로그램 편성</b><p>주간 스터디(6주 과정), 월 1회 나라별 프리토킹 데이, 학기 단위 1:1 언어교환을 학기 시작 전에 시간표로 공개한다.</p><span class="map">관련 방안 2 · 3 · 4</span></div>
-        <div><span class="k">축 3</span><b>참여 기반 성과 지표</b><p>실인원, 재방문율, 프로그램 이수율을 기록하고 글로벌 현장학습 선발과 연결한다.</p><span class="map">관련 방안 1 · 5</span></div>
+        <div><span class="k">축 1</span><b>다인 버디 체제 전환</b><p>근로학생 역할을 공간 관리에서 예약 관리·방문 기록·진행 보조로 조정하고, 외국인 버디·홍보대사와 시간표를 나누어 운영.</p><span class="map">관련 방안 2 · 4 · 5</span></div>
+        <div><span class="k">축 2</span><b>정기 프로그램 편성</b><p>상시 개방 시간(자유 프리토킹)과 예약제 소그룹 시간을 구분. 주간 스터디, 월 1회 나라별 프리토킹 데이, 1:1 언어교환을 학기 시작 전 시간표로 공지.</p><span class="map">관련 방안 2 · 3 · 4</span></div>
+        <div><span class="k">축 3</span><b>참여 기반 성과 관리</b><p>실인원, 재방문율, 프로그램 이수율을 기록하고 글로벌 현장학습 선발과 연계.</p><span class="map">관련 방안 1 · 5</span></div>
       </div>
       <div class="tbl"><table>
         <thead><tr><th class="n">순위</th><th>방안</th><th>근거 사례</th><th>추가 예산</th></tr></thead>
         <tbody>
           <tr class="hl"><td class="n">1</td><td>글로벌 존 참여 실적을 글로벌 현장학습 선발 서류심사에 소폭 반영<span class="s">2027년 파견 20명 확대, 가군 일반전형 지원자 확보</span></td><td>가천대, 영진전문대</td><td>없음</td></tr>
-          <tr><td class="n">2</td><td>스터디 그룹을 예약제 6주 과정으로 운영<span class="s">정원 4~8명, 불참 2회 시 참여 제한</span></td><td>창원대, 한성대</td><td>없음</td></tr>
+          <tr><td class="n">2</td><td>상시 개방과 예약제 소그룹 병행 운영<span class="s">소그룹 정원 4~8명·6주 과정, 불참 2회 시 참여 제한</span></td><td>창원대, 한성대, 서울시립대</td><td>없음</td></tr>
           <tr><td class="n">3</td><td>학기 단위 1:1 언어교환 매칭<span class="s">재학생 ↔ 학위과정·한국어학당 유학생</span></td><td>중앙대, 고려대</td><td>소액(우수자 시상)</td></tr>
           <tr><td class="n">4</td><td>월 1회 나라별 프리토킹 데이<span class="s">외국인 버디·홍보대사 참여, 홍보대사 숏폼 소재로 활용</span></td><td>건국대, 단국대</td><td>소액</td></tr>
           <tr><td class="n">5</td><td>QR·온라인 방문 기록으로 실인원·재방문율·학과별 참여 관리</td><td>영진전문대</td><td>없음</td></tr>
         </tbody>
       </table></div>
-      <div class="quote">다른 대학은 글로벌 라운지를 예약제 소그룹, 1:1 언어교환, 해외 프로그램 선발과 연결해 운영한다. 본교는 예산을 늘리지 않고 이 세 가지를 2027년에 적용한다.</div>
+      <div class="quote">예약제 소그룹, 1:1 언어교환, 해외 프로그램 선발 연계는 예산 증액 없이 현행 예산과 인력(버디·외국인 홍보대사) 범위에서 2027년부터 도입 가능</div>
     </section>
 
     <section id="s5">
       <p class="kicker">SECTION 05</p>
-      <h2>논의 사항</h2>
+      <h2>2027 계획(안)</h2>
       <ol class="discuss">
-        <li>글로벌 현장학습 선발 시 글로벌 존 참여 실적 반영 여부와 반영 비율</li>
-        <li>1:1 언어교환 매칭 대상(학위과정 유학생, 한국어학당 학생) 범위와 유학생지원팀 협조 방식</li>
-        <li>외국인 홍보대사 활동시간에 글로벌 존 활동을 인정할지 여부</li>
-        <li>근로학생 호스트 역할 전환에 따른 업무 범위와 근무 시간표 조정</li>
+        <li><b>운영 체제</b> 다인 버디 체제로 전환. 근로학생은 예약 관리·방문 기록·진행 보조, 외국인 버디·홍보대사는 프리토킹과 프로그램 진행 담당</li>
+        <li><b>운영 시간</b> 상시 개방 시간(자유 프리토킹)과 예약제 소그룹 시간을 구분하여 학기 시작 전 시간표 공지</li>
+        <li><b>해외 프로그램 연계</b> 글로벌 현장학습 선발 서류심사에 글로벌 존 참여 실적 반영(반영 비율은 별도 협의)</li>
+        <li><b>1:1 언어교환</b> 매칭 대상(학위과정 유학생, 한국어학당 학생) 범위 확정 및 유학생지원팀 협조 체계 마련</li>
+        <li><b>외국인 홍보대사</b> 글로벌 존 활동을 홍보대사 활동시간으로 인정하는 방안 검토</li>
+        <li><b>성과 관리</b> QR·온라인 방문 기록으로 실인원·재방문율·학과별 참여를 집계하고 학기별 결과 보고</li>
       </ol>
     </section>
 
     <section id="s6">
       <p class="kicker">SECTION 06</p>
       <h2>참고자료</h2>
-      <p class="note">타 대학 사례는 각 대학 공지와 보도자료(2020~2026) 기준이다. 영진전문대 예약시스템은 2020년 보도라 현재 운영 여부는 확인되지 않았다. 세부 기준은 최신 공지로 다시 확인이 필요하다.</p>
+      <p class="note">타 대학 사례는 각 대학 공지와 보도자료(2020~2026) 기준. 영진전문대 예약시스템은 2020년 보도 내용으로 현재 운영 여부는 미확인. 세부 기준은 최신 공지로 재확인 필요.</p>
       <details open>
         <summary>출처 목록</summary>
         <ol class="refs">
-          <li id="r1">창원대 국제교류교육원, English Lounge 운영안내 — <a href="https://www.changwon.ac.kr/lang/cm/cntnts/cntntsView.do?mi=11119&cntntsId=1855">changwon.ac.kr</a></li>
-          <li id="r2">한성대 Global Lounge 소개 — <a href="https://www.hansung.ac.kr/engla/4570/subview.do">hansung.ac.kr</a></li>
-          <li id="r3">한국공학대, 2026-2 글로벌 잉글리시 카페 예약 안내 — <a href="https://www.tukorea.ac.kr/bbs/language/315/148339/artclView.do">tukorea.ac.kr</a></li>
-          <li id="r4">서울시립대 국제교류과 공지사항 — <a href="https://oia.uos.ac.kr/koia/web/bbs/koia_not01/40887">oia.uos.ac.kr</a></li>
-          <li id="r5">중앙대 한국어교육과정, 언어교환 프로그램 — <a href="https://korean.cau.ac.kr/korean/community.php?mid=m04_01">korean.cau.ac.kr</a></li>
-          <li id="r6">고대신문, 「언어교류프로그램으로 어서 오세요」 — <a href="https://www.kunews.ac.kr/news/articleView.html?idxno=30919">kunews.ac.kr</a></li>
-          <li id="r7">한경매거진, 「외국인 교환학생을 친·추·하자」 — <a href="https://magazine.hankyung.com/job-joy/article/202102195746d">magazine.hankyung.com</a></li>
-          <li id="r8">공주대, 2025학년도 2학기 버디프로그램 안내 — <a href="https://www.kongju.ac.kr/KNU/16909/subview.do">kongju.ac.kr</a></li>
-          <li id="r9">베리타스알파, 「영진전문대, 내외국인 학생들 온라인서 뜨거운 교류」 — <a href="https://www.veritas-a.com/news/articleView.html?idxno=342836">veritas-a.com</a></li>
-          <li id="r10">뉴시스, 「영진전문대 '글로벌 존 예약시스템'」(2020. 10. 22.) — <a href="https://www.newsis.com/view/NISX20201022_0001206800">newsis.com</a></li>
-          <li id="r11">제주대 국제교류처, 외국인 유학생 비교과 마일리지 장학금 안내 — <a href="https://cms.jejunu.ac.kr/intl/community/notice2.htm?act=view&page=5&seq=250894">jejunu.ac.kr</a></li>
-          <li id="r12">중앙이코노미뉴스, 「가천대, 국제교류 프로그램으로 308명 해외 파견」 — <a href="https://www.joongangenews.com/news/articleView.html?idxno=473256">joongangenews.com</a></li>
-          <li id="r13">성신여대, S+마일리지 지급기준 — <a href="https://sungshin.ac.kr/inno/16088/subview.do">sungshin.ac.kr</a></li>
-          <li id="r14">금오공대 국제교류교육원 — <a href="https://iplec.kumoh.ac.kr/iplec/sub0402.do">iplec.kumoh.ac.kr</a></li>
-          <li id="r15">충남대 국제교류본부 — <a href="https://cnuint.cnu.ac.kr/cnuint/exchange/exchange.do">cnuint.cnu.ac.kr</a></li>
-          <li id="r16">매일타임즈, 「건국대, 10개국 학생이 만든 '글로벌 문화 축제'」 — <a href="https://press.mtime.co.kr/newsRead.php?no=1031562">press.mtime.co.kr</a></li>
-          <li id="r17">단국대 웹진, 「2026 단국 글로벌문화축제」 — <a href="https://webzine.dankook.ac.kr/news/articleView.html?idxno=1053">webzine.dankook.ac.kr</a></li>
-          <li id="r18">베리타스알파, 「동신대 세계인의 날 글로벌 문화교류 행사」 — <a href="https://www.veritas-a.com/news/articleView.html?idxno=612466">veritas-a.com</a></li>
-          <li id="r19">지역내일, 「영진전문대 8년 연속 교육국제화역량 인증」 — <a href="https://www.localnaeil.com/News/View/652621">localnaeil.com</a></li>
-          <li id="r20">베리타스알파, 「인천대, 외국인 유학생 지원 거점 '글로벌 라운지' 개소」 — <a href="https://www.veritas-a.com/news/articleView.html?idxno=603865">veritas-a.com</a></li>
-          <li id="r21">서울경제TV, 「영남대 Global Culture Festival 개최」 — <a href="https://www.sentv.co.kr/article/view/sentv202610170025">sentv.co.kr</a></li>
+          <li id="r1">창원대 국제교류교육원, English Lounge 운영안내, <a href="https://www.changwon.ac.kr/lang/cm/cntnts/cntntsView.do?mi=11119&cntntsId=1855">changwon.ac.kr</a></li>
+          <li id="r2">한성대 Global Lounge 소개, <a href="https://www.hansung.ac.kr/engla/4570/subview.do">hansung.ac.kr</a></li>
+          <li id="r3">한국공학대, 2026-2 글로벌 잉글리시 카페 예약 안내, <a href="https://www.tukorea.ac.kr/bbs/language/315/148339/artclView.do">tukorea.ac.kr</a></li>
+          <li id="r4">서울시립대 국제교류과 공지사항, <a href="https://oia.uos.ac.kr/koia/web/bbs/koia_not01/40887">oia.uos.ac.kr</a></li>
+          <li id="r5">중앙대 한국어교육과정, 언어교환 프로그램, <a href="https://korean.cau.ac.kr/korean/community.php?mid=m04_01">korean.cau.ac.kr</a></li>
+          <li id="r6">고대신문, 「언어교류프로그램으로 어서 오세요」, <a href="https://www.kunews.ac.kr/news/articleView.html?idxno=30919">kunews.ac.kr</a></li>
+          <li id="r7">한경매거진, 「외국인 교환학생을 친·추·하자」, <a href="https://magazine.hankyung.com/job-joy/article/202102195746d">magazine.hankyung.com</a></li>
+          <li id="r8">공주대, 2025학년도 2학기 버디프로그램 안내, <a href="https://www.kongju.ac.kr/KNU/16909/subview.do">kongju.ac.kr</a></li>
+          <li id="r9">베리타스알파, 「영진전문대, 내외국인 학생들 온라인서 뜨거운 교류」, <a href="https://www.veritas-a.com/news/articleView.html?idxno=342836">veritas-a.com</a></li>
+          <li id="r10">뉴시스, 「영진전문대 '글로벌 존 예약시스템'」(2020. 10. 22.), <a href="https://www.newsis.com/view/NISX20201022_0001206800">newsis.com</a></li>
+          <li id="r11">제주대 국제교류처, 외국인 유학생 비교과 마일리지 장학금 안내, <a href="https://cms.jejunu.ac.kr/intl/community/notice2.htm?act=view&page=5&seq=250894">jejunu.ac.kr</a></li>
+          <li id="r12">중앙이코노미뉴스, 「가천대, 국제교류 프로그램으로 308명 해외 파견」, <a href="https://www.joongangenews.com/news/articleView.html?idxno=473256">joongangenews.com</a></li>
+          <li id="r13">성신여대, S+마일리지 지급기준, <a href="https://sungshin.ac.kr/inno/16088/subview.do">sungshin.ac.kr</a></li>
+          <li id="r14">금오공대 국제교류교육원, <a href="https://iplec.kumoh.ac.kr/iplec/sub0402.do">iplec.kumoh.ac.kr</a></li>
+          <li id="r15">충남대 국제교류본부, <a href="https://cnuint.cnu.ac.kr/cnuint/exchange/exchange.do">cnuint.cnu.ac.kr</a></li>
+          <li id="r16">매일타임즈, 「건국대, 10개국 학생이 만든 '글로벌 문화 축제'」, <a href="https://press.mtime.co.kr/newsRead.php?no=1031562">press.mtime.co.kr</a></li>
+          <li id="r17">단국대 웹진, 「2026 단국 글로벌문화축제」, <a href="https://webzine.dankook.ac.kr/news/articleView.html?idxno=1053">webzine.dankook.ac.kr</a></li>
+          <li id="r18">베리타스알파, 「동신대 세계인의 날 글로벌 문화교류 행사」, <a href="https://www.veritas-a.com/news/articleView.html?idxno=612466">veritas-a.com</a></li>
+          <li id="r19">지역내일, 「영진전문대 8년 연속 교육국제화역량 인증」, <a href="https://www.localnaeil.com/News/View/652621">localnaeil.com</a></li>
+          <li id="r20">베리타스알파, 「인천대, 외국인 유학생 지원 거점 '글로벌 라운지' 개소」, <a href="https://www.veritas-a.com/news/articleView.html?idxno=603865">veritas-a.com</a></li>
+          <li id="r21">서울경제TV, 「영남대 Global Culture Festival 개최」, <a href="https://www.sentv.co.kr/article/view/sentv202610170025">sentv.co.kr</a></li>
         </ol>
       </details>
     </section>
